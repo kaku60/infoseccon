@@ -11,7 +11,7 @@ $html = scraperwiki::scrape("http://www.concise-courses.com/security/conferences
 // Find something on the page using css selectors
 $dom = new simple_html_dom();
 $dom->load($html);
-preg_match("/Date: ([0-9]*)<br \/>/i", $html, $date);
+preg_match("/Date: (.*)<br \/>/i", $html, $date);
 
 print_r($date);
 
