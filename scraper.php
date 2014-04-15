@@ -11,10 +11,10 @@ $html = scraperwiki::scrape("http://www.concise-courses.com/security/conferences
 // Find something on the page using css selectors
 $dom = new simple_html_dom();
 $dom->load($html);
-foreach($dom->find("p") as $p){
+foreach($dom->find("p strong") as $title){
 //  if(preg_match("/Date: (.*)<br \/>/i", $html, $date);
 
-print_r($p);
+print_r($title);
 }
 
 // Write out to the sqlite database using scraperwiki library
